@@ -1,35 +1,67 @@
-body{
-    background: #202020;
-    color: whitesmoke;
+body
+{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar{
-    background: #404040;
-    padding: 5px 0;
+li,a, button{
+  font-family: 'Mali', cursive;
+  font-weight: 200;
+  font-size: 1.5rem;
+  color: #F43B86;
+  text-decoration: none;
+
 }
-.navbar ul{
-    display: flex;
-    justify-content: space-between;
+
+.main{
+  font-weight: 500;
+  font-size: 2.5rem;
+  color: #FFE459;
+  margin-right: auto;
+  
 }
-.navbar ul li{
-    list-style: none;
+
+nav{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 30px 20%;
+  background-color: #11052C;
 }
-.navbar ul li a{
-    color: white;
-    text-decoration: none;
+
+.links
+{
+  list-style: none;
 }
-.navbar ul li a:hover{
-    color: aquamarine;
+
+.links li{
+  display: inline-block;
+  padding: 20px;
 }
-.container{
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px 0px;
+
+.links li a
+{
+  transition: all 0.4s ease 0s;
 }
-.card{
-    background: whitesmoke;
-    color: black;
-    padding: 10px;
-    margin-bottom: 2px;
-    tec
+
+.links li a:hover
+{
+  color: #AA2EE6
+}
+
+button{
+  margin-left: 20px;
+  padding: 9px 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 10000;
+  background-color: rgba(178, 249, 252, 1);
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s ease 0s;
+}
+button:hover
+{
+  background-color: rgba(178, 249, 252, 0.8);
 }
