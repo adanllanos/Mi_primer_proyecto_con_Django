@@ -1,47 +1,35 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Django projects</title>
-
     <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    
+
+</head>
+<body>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mali:wght@200;400&family=Montserrat:wght@200&display=swap" rel="stylesheet">
 
-</head>
-<body>
-
 <header>
-    <nav >
+    <nav>
         <a class="main" href="#">Navbar</a>
         <ul class="links">
-            <li>
-                <a href="{% url 'index' %}">Home</a>
-            </li>
-            <li>
-                <a href="{% url 'projects' %}">Projects</a>
-            </li>
-            <li>
-                <a href="{% url 'tasks' %}">tasks</a>
-            </li>
-            <li>
-                <a href="{% url 'about' %}">About</a>
-            </li>
-            <li>
-                <a href="{% url 'create_task' %}">Create task</a>
-            </li>
-            <li>
-                <a href="{% url 'create_project' %}">Create projects</a>
-            </li>
+            <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'projects' %}">Projects</a></li>
+            <li><a href="{% url 'tasks' %}">tasks</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li><a href="{% url 'create_task' %}">Create task</a></li>
+            <li><a href="{% url 'create_project' %}">Create projects</a></li>
         </ul>
         <a class="button" href="#"><Button>Login</Button></a>
     </nav>
 </header>
-<main class="container">
 
     {% block content %}
 
