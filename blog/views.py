@@ -67,3 +67,6 @@ def project_detail(request, id):
         'project': project,
         'tasks': tasks
     })
+
+def imagenes(request):
+    return render(request,'imagenes/cargar_imagenes.html')

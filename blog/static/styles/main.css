@@ -3,6 +3,7 @@ body
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: #4e447e;
 }
 
 li,a, button{
