@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'mi_proyecto.wsgi.application'
 import os
 debug = os.environ.get('DEBUG')
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.parse(('postgres://database_xsrx_user:FmyTlTWWAIu2p2ZCsX6dfZWTM5QpzmWd@dpg-cgga3s82qv28tc2uch0g-a.oregon-postgres.render.com/database_xsrx'))
 }
 
 
