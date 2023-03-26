@@ -81,6 +81,7 @@ WSGI_APPLICATION = 'mi_proyecto.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
+
 import os
 debug = os.environ.get('DEBUG')
 DATABASES = {
