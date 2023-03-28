@@ -26,6 +26,10 @@ function leerArchivo() {
           img.src = urlImagen;
           img.alt = 'Imagenes';
           img.classList.add('rounded', 'img');
+          img.addEventListener("click", function() {
+            img.classList.toggle("ampliada");
+            console.log('click')
+          });
 
           // Agregar la imagen al div
           div.appendChild(img);

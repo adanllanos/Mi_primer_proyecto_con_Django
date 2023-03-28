@@ -75,17 +75,11 @@ WSGI_APPLICATION = 'mi_proyecto.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-#}
-
-import os
-debug = os.environ.get('DEBUG')
 DATABASES = {
-    'default': dj_database_url.parse(('postgres://database_xsrx_user:FmyTlTWWAIu2p2ZCsX6dfZWTM5QpzmWd@dpg-cgga3s82qv28tc2uch0g-a.oregon-postgres.render.com/database_xsrx'))
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
 
 
