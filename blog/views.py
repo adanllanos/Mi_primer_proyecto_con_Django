@@ -70,3 +70,6 @@ def project_detail(request, id):
 
 def imagenes(request):
     return render(request,'imagenes/cargar_imagenes.html')
+
+def login(request):
+    return render(request,'login.html')
