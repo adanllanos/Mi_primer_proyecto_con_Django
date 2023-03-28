@@ -14,6 +14,8 @@ urlpatterns = [
     path('create_project/', views.create_project, name="create_project"),
     path('imagenes/', views.imagenes),
     path('login/', views.signin, name='signin'),
+    path('403/', views.error, name='403'),
+
 
 
 ]

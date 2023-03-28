@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, JsonResponse
+from django.http import HttpResponse, HttpResponseForbidden, JsonResponse
 from .models import Project, Task
 from django.shortcuts import get_object_or_404, render
 from .forms import Create_new_task, Create_new_project
 from django.contrib.auth import authenticate, login
+
+#para saber si es superuser
+from django.contrib.auth.decorators import user_passes_test
+
 
 # Create your views here.
 def index(request):
@@ -33,6 +37,9 @@ def projects(request):
         'projects': projects
     })
 
+def error(request):
+    return render(request,'403.html')
+
 def tasks(request):
     #tasks = get_object_or_404(Task , id=id)
     #return HttpResponse('tasks: %s ' % tasks.title)
@@ -40,7 +47,8 @@ def tasks(request):
     return render(request, 'tasks/tasks.html', {
         'tasks': tasks
     })
-
+#@user_passes_test(lambda u: not u.is_superuser)/////el codigo para que si no eres superuser no puedas acceder a esta fucionalidad
+@user_passes_test(lambda u: u.is_superuser, login_url='/403/')
 def create_task(request):
     if request.method == 'GET':
         #show intergaces
@@ -50,7 +58,9 @@ def create_task(request):
     else:
         Task.objects.create(title = request.POST['title'],description = request.POST['description'], project_id = 1)
         return redirect("tasks")
-        
+
+    
+@user_passes_test(lambda u: u.is_superuser, login_url='/403/')        
 def create_project(request):
     if request.method == 'GET':
         return render (request, 'projects/create_project.html',{
@@ -89,6 +99,4 @@ def signin(request):
                 return redirect("index")
         except:
             return redirect("signin")
-        
-        
-    
+     
