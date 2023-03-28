@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse
 from .models import Project, Task
 from django.shortcuts import get_object_or_404, render
 from .forms import Create_new_task, Create_new_project
+from django.contrib.auth import authenticate, login
 
 # Create your views here.
 def index(request):
@@ -71,5 +72,23 @@ def project_detail(request, id):
 def imagenes(request):
     return render(request,'imagenes/cargar_imagenes.html')
 
-def login(request):
-    return render(request,'login.html')
+def signin(request):
+    if request.method == 'GET':
+        return render(request,'login.html')
+    else:
+        try:
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is None:
+                return render(request,'login.html',{
+                    'error': 'El nombre de usuario o contraseña son incorrectos'
+                })
+            else:
+                login(request,user)
+                return redirect("index")
+        except:
+            return redirect("signin")
+        
+        
+    
