@@ -22,3 +22,5 @@ class Laptop(models.Model):
     nombre = models.CharField(max_length=20,unique=True)
     imagen = models.ImageField(upload_to="imagenes/productos", null=True)
 
+class Celular(models.Model):
+    nombre = models.CharField(max_length=20)
