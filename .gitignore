@@ -1,2 +1,2 @@
-carpeta_git_ignore
-node_modules
+/carpeta_git_ignore
+/node_modules
