@@ -16,7 +16,5 @@ urlpatterns = [
     path('login/', views.signin, name='signin'),
     path('403/', views.error, name='403'),
 
-
-
 ]
 
